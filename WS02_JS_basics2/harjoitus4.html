@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opiskelijasivu</title>
+</head>
+<body>
+
+<script>
+    // 1. Kysy käyttäjältä "confirm-dialogilla" onko hän opiskelija.
+    // confirm()-funktio palauttaa "true", jos käyttäjä painaa OK, ja "false", jos hän painaa Peruuta.
+    const onkoOpiskelija = confirm("Oletko opiskelija?");
+
+    // 2. Tarkista käyttäjän valinta if-lauseella.
+    if (onkoOpiskelija) {
+        // Jos käyttäjä on opiskelija, pyydä hänen nimeään "prompt-dialogilla".
+        const nimi = prompt("Mikä on nimesi?");
+        
+        // Kirjoita sivulle tervetulotoivotus ja nimi.
+        document.write(`<h1>Tervetuloa, ${nimi}!</h1>`);
+        
+    } else {
+        // Jos käyttäjä ei ole opiskelija, kirjoita sivulle kielteinen viesti.
+        document.write("<h1>Valitettavasti tämä sivu on tarkoitettu vain opiskelijoille.</h1>");
+    }
+</script>
+
+</body>
+</html>
