@@ -1,0 +1,1 @@
+Tämä työtila sisältää Laurea AMK:n Web-sovellusten kehittäminen JavaScriptillä -kurssin harjoitukset sekä esimerkkiratkaisut. Mukana on myös ohjeita Git/GitHub-käyttöön sekä markdown-sivupohja projekteja varten.

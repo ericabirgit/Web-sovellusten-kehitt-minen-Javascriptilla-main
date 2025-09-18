@@ -1,0 +1,386 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+    <!-- meta tag is used to define the character set, viewport, http-equiv etc. -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- title tag is used to define the title of the page -->
+    <title>Workshop 01 excercises</title>
+    <!-- link tag is used to link to external CSS files -->
+    <link rel="stylesheet" href="./css/Workshop1_example1.css">
+
+
+    <!-- script tag is where Javascript goes to -->
+    <script>
+        for (var i = 0; i < 400; i++) {
+            console.log("This round is " + i);
+        }
+    </script>
+
+</head>
+
+<body>
+    <h1>Welcome to Workshop 01 excercises</h1>
+
+    <ol>
+        <li><b>Save Workshop1_example1.html and open it with a web browser (preferably Google Chrome/Firefox/Brave).</b>
+            </br></br>
+            You
+            see
+            it’s a plain HTML-file no magic tricks attached. BUT - as a matter of fact a block of JavaScript is being
+            run
+            every time the page loads, but since it doesn’t output anything or modify the page, you can’t see it.
+        </li>
+        </br></br>
+        <li><b>Press F12 to open Developer tools and select “Console” to see what JavaScript interpreter is doing</b>
+            </br></br>
+            Console is the place where possible error messages or console logging will be printed.
+        </li>
+        </br></br>
+        <li><b>Close the window and see the source code of the page with Ctrl+U.</b>
+            </br></br>
+            There you can see some JavaScript in the <i>'script'</i> -block. Next close the source - window.
+        </li>
+        </br></br>
+        <li><b>Save Workshop1_example1.html and open it with a web browser (preferably Google Chrome/Firefox/Brave).</b>
+            </br></br>
+            You
+            see
+            it’s a plain HTML - file no magic tricks attached.BUT - as a matter of fact a block of JavaScript is being
+            run
+            every time the page loads, but since it doesn’t output anything or modify the page, you can’t see it.
+        </li>
+        </br></br>
+        <li><b>Open the JS Console once again (F12). </b>
+            </br></br>
+            Console is also the place where you can enter and run JavaScript commands to your browser. Lets try it out.
+            You can increase the font size by pressing Ctrl and scrolling the mouse wheel at the same time.
+        </li>
+        </br></br>
+        <li><b>Alert() -function is one of the easiest way to display data to the user.</b>
+            </br></br>
+            It is also often used when debugging or developing a program in order to see the values of a variable etc.
+            </br>
+            <ol>
+
+                <li>
+                    Type in <i><b>alert();</b></i> What happens?
+                </li>
+                <li>
+                    Type in <i><b>alert(“Hello World”);</b></i> What happens?
+                </li>
+                <li>
+                    Type in <i><b>alert(“Hello World”); alert(“Hello World”); alert(“Hello World”);</b></i> What
+                    happens?
+                </li>
+                <li>
+                    Sometimes one has to enter commands which require multiple lines. In these cases, use SHIFT+Enter to
+                    change the line without running the command. All the lines will be run consequently.</br>
+                    <i><b>
+                            </br>
+                            alert("Hello world!"); // Press Shift+Enter here
+                            </br>
+                            alert("Another hello world"); // Press Shift+Enter here
+                            </br>
+                            alert("Still one more hello world"); // Enter here
+                            </br>
+                        </b>
+                    </i>
+                </li>
+                <li>
+                    Try also typing nonsense to the console. You will see an error message in red.
+                </li>
+            </ol>
+        </li>
+        </br></br>
+        <li><b>JS does not have any built-in print functions. You can output data in the following ways</b>
+            </br></br>
+            <ul>
+                <li>
+                    Writing into an alert box, using <i><b>window.alert()</b></i>.
+                </li>
+                <li>
+                    Writing into the HTML output using <i><b>document.write()</b></i>.
+                </li>
+                <li>
+                    Writing into the browser console, using <i><b>console.log()</b></i>.
+                </li>
+            </ul></br>
+            Try also adding the code in the SCRIPT-section of the
+            example1.html -page and then loading the page.
+        </li>
+        </br></br>
+        <li><b>Defining variables</b>
+            </br></br>
+            Go back to the console and clear it. Then type in the following commands:
+            </br>
+            <ol>
+                <li>
+                    <i><b>var x = 5;</b></i>
+                </li>
+                <li>
+                    <i><b>var y = 6;</b></i>
+                </li>
+                <li>
+                    <i><b>var z = x + y;</b></i>
+                </li>
+                <li>
+                    <i><b>console.log(z);</b></i>
+
+                </li>
+                <li>
+                    <i><b>alert(z);</b></i>
+                </li>
+
+                <li>
+                    <i><b>document.write(z);</b></i>
+                </li>
+
+            </ol>
+
+            <p>With console.log -function you can print data to the same Javascript console you’ve been working on so
+                far. This is very useful when you want to print some debug info.</p>
+        </li>
+        </br></br>
+        <li><b>Conditionals.</b>
+            </br></br>
+            Try out the following snippet of code in your JS console. Play around with it and see what happens. Remember
+            to use Shift+Enter if you have multiple lines of code you want to enter before running the block.
+            <div class="eka">
+                <i><b>
+                        </br>
+                        var x = 50; // Press Shift+Enter here
+                        </br>
+                        var order = 'Beer'; // Press Shift+Enter here
+                        </br>
+                        if (x > 50) {
+                        </br>
+                        <div class="toka">
+                            document.write("He's over 50!" );
+                        </div>
+
+                        } else if (x <= 50 && x> 30){
+                            </br>
+                            <div class="toka">
+                                document.write("Middle aged man, who ordered some "+order);
+                            </div>
+
+
+                            } else {
+                            </br>
+                            <div class="toka">
+                                document.write("It seems you're bit underaged.");
+                            </div>
+                            }
+                            </br>
+                            </br>
+                    </b>
+                </i>
+                <p>
+                    Modify the code so, that it will
+                </p>
+                <ul>
+                    <li>
+                        Print out HTML-tags to produce formatted output on the page, for example the output could be
+                        <h4>He’s over 50</h4> or <strong>Middle aged man</strong> -tags
+                    </li>
+                    <li>
+                        Have more paths (else if -statements) for different age ranges
+                    </li>
+                    <li>
+                        output different messages for each agegroup
+                    </li>
+                    <li>
+                        output the message to the console as well
+                    </li>
+                </ul>
+            </div>
+            </br>
+        </li>
+
+        <li><b>Loops.</b>
+            </br></br>
+            Try out the following code and play around with it.
+            <div class="eka">
+                <i><b>
+                        </br>
+                        var arr = [];
+                        </br>
+
+                        for (var i=0; i<15; i++) { </br>
+                            <div class="toka">
+                                arr.push(Math.random());
+                            </div>
+
+                            </br>
+                            }
+                            </br>
+                            console.log(arr);
+                    </b>
+                </i>
+                <p>
+                    Modify the code so, that it will
+                </p>
+                <ul>
+                    <li>
+                        Output the values generated to the console as they are created
+                    </li>
+                    <li>
+                        Output the values using document.write, using HTML-tags to format them
+                    </li>
+                    <li>
+                        Randomize numers between 1-100
+                    </li>
+                    <li>
+                        output the message to the console as well
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li><b>Functions.</b>
+            </br></br>
+            Try out the following code and play around with it.
+            <div class="eka">
+                <i><b>
+                        </br>
+                        function addNumbers(a, b) { </br>
+                        <div class="toka">
+                            return a + b;
+                        </div>
+
+                        </br>
+                        }
+                        </br>
+                        console.log(addNumbers(5, 10));
+                    </b>
+                </i>
+                <p>
+                    Modify the code so, that ...
+                </p>
+                <ul>
+                    <li>
+                        You will assign values to two variables and then call the function with those variables
+                    </li>
+                    <li>
+                        Check if the sum of the two numbers is over 100, if it is, print out (alert) a message to
+                        the
+                        user
+                    </li>
+                    <li>
+                        Output the values and sum using document.write, using HTML-tags to format them
+                    </li>
+
+                </ul>
+            </div>
+        </li>
+
+        <li><b>Objects.</b>
+            </br></br>
+            Try out the following code and play around with it.
+            <div class="eka">
+                <i><b>
+                        </br>
+                        // Define an object to hold person data</br>
+                        var person = { </br>
+                        <div class="toka">
+                            firstName:"John",
+                        </div>
+                        <div class="toka">
+                            lastName:"Doe",
+                        </div>
+                        <div class="toka">
+                            age:50,
+                        </div>
+                        <div class="toka">
+                            eyeColor:"blue"
+                        </div>
+
+
+                        };
+                        </br>
+                        console.log(person.age);
+                    </b>
+                </i>
+                <p>
+                    Modify the code so, that it will ...
+                </p>
+                <ul>
+                    <li>
+                        have a field for address and telephone.
+                    </li>
+                    <li>
+                        have one anonymous method named printInfo, which will print all the information of the
+                        person
+                        object in the console
+                    </li>
+                    <li>
+                        create an array with 4 person objects in it. Then loop through the array and print out the
+                        first
+                        and lastname for each item
+                    </li>
+
+                </ul>
+            </div>
+        </li>
+        <li>
+            <b>Extras.</b>
+            </br></br>
+            <div>
+                Write a JavaScript function that will return the given man’s age (input parameter) as dogs age. It
+                is
+                usually considered that dogs age is man’s age multiplied by seven.
+            </div>
+            </br></br>
+            <div>
+                Try to run the following of code snippets in the console. Try to find and correct errors in them?
+                Use
+                Developer Tools for debugging.
+            </div>
+
+            <div class="eka">
+                <i><b>
+                        </br>
+                        <h3>Snippet 1</h3>
+                        <div>
+                            var i = 5; var j = 10 </br>
+                            var k = 25; var l = Joe; </br>
+                            if (i < j) { </br>
+                        </div>
+                        <div class="toka">
+                            console.log("i");
+                        </div>
+                        <div>
+                            } else if (j > k) { </br>
+
+                            <div class="toka">
+                                console.log("k");
+                            </div>
+                            <div>
+                                else console.log("l);
+                            </div>
+
+
+
+                        </div>
+
+                        <h3>Snippet 2</h3>
+                        <div>
+                            var arr = [3, 5, 7]; </br>
+                            for (var i = 0; i <=3; ++i){ </br>
+                        </div>
+                        <div class="toka">
+                            console.log(arr[i]);
+                        </div>
+                        <div>
+                            }
+                        </div>
+                    </b>
+                </i>
+
+            </div>
+        </li>
+    </ol>
+</body>
+
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html lang="fi">
+
+
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Työpaja 2: JavaScript BOM & DOM</title>
+
+</head>
+
+<style>
+    body {
+
+        font-family: Arial, Helvetica, sans-serif
+    }
+
+
+
+    h2 {
+
+        color: blue
+    }
+
+
+
+    code {
+
+        font-size: larger;
+
+    }
+</style>
+
+<!-- SCRIPT TÄGIN VOIT KIRJOITTAA TÄHÄN -->
+
+<script>
+
+    document.write("<b><em>\"If I had nine hours to chop down a tree, I'd spend the first six sharpening my ax.\"</b><p> -Abraham Lincoln</em>")
+
+
+
+    function repeatingText() {
+
+        let lkm = prompt("Monta kertaa toistetaan?");
+
+        for (let i = 0; i < lkm; i++) {
+
+            document.write("Hello world!")
+
+        }
+
+    }
+
+    // Haluttaessa kutsutaan funktiota
+
+    // repeatingText()
+
+</script>
+
+
+
+<body>
+
+
+
+    <h1>Työpaja 2: JavaScript BOM & DOM</h1>
+
+
+
+    <p>Tässä harjoituksessa harjoitellaan BOM:n ja DOM:n käyttöä. Käytä luentomateriaalia näiden harjoitusten kanssa.
+
+    </p>
+
+
+
+    <p>Avaa ensin workshop2.html -tiedosto selaimeen.</p>
+
+
+
+    <p>Kokeile ratkaista tehtävä konsolissa. Kun saat ratkaisun tehtyä, voit tallentaa koodin tiedostoon script-tägin
+
+        sisälle.</p>
+
+
+
+    <h2>Harjoitus 1</h2>
+
+
+
+    <p>Luo JavaScript-komennot, jotka kirjoittavat seuraavan tekstin selaimessa näkyvälle sivulle. Käytä HTML-tageja
+
+        tuottaaksesi tekstin tyylit (lihavointi, kursivointi) sivulle.</p>
+
+
+
+    <blockquote>
+
+        <strong><i>&quot;If I had nine hours to chop down a tree, I&#39;d spend the first six
+
+                sharpening my ax.&quot;</i></strong>
+
+        <br><br><em>– Abraham Lincoln</em>
+
+    </blockquote>
+
+
+
+    <h2>Harjoitus 2</h2>
+
+
+
+    <p>Luo JavaScript-funktio nimeltä <code>repeatingText</code>, joka kirjoittaa saman rivin tekstiä sivulle 50 kertaa.
+
+    </p>
+
+
+
+    <p><strong>Bonus:</strong> kysy käyttäjältä toistojen määrä <a
+            href="https://developer.mozilla.org/en-US/docs/Web/APIrompt">prompt-ikkunalla</a>.</p>
+
+
+
+    <h2>Harjoitus 3 - Selaimen tunnistaminen</h2>
+
+
+
+    <p>Luo JavaScriptillä <code>if</code>-lause, joka tarkistaa, käyttääkö käyttäjä Mozilla-selainta. Jos käyttää,
+
+        selain ohjataan sivulle <code>http://www.mozilla.org</code>. Muussa tapauksessa selain ohjataan jollekin
+
+        toiselle verkkosivulle. Vie koodi sivun Script-tägiin ja kokeile. Kun olet todennut koodin toimivaksi, laita se
+
+        kommentteihin.</p>
+
+    <p><strong>Vinkki:</strong> Tarkimmat tiedot selaimesta saat <code>navigator.appVersion</code> -kentästä. Kentästä
+
+        on
+
+        helpointa etsiä haluttua
+
+        hakusanaa <code>contains</code>-funktiolla.
+
+    <p><strong>Bonus:</strong> ennen ohjausta näytä käyttäjälle alert-ikkunalle tiedote: " You are using
+
+        Firefox,
+
+        redirecting you...".</p>
+
+
+
+    <p><strong>Pohdiskelu:</strong> miksi selain-tunnistus voi olla epäluotettavaa ja miksi "Feature detection"
+
+        on usein parempi.</p>
+
+
+
+    <h2>Harjoitus 4</h2>
+
+
+
+    <p>Luo yksinkertainen verkkosivu, jossa JavaScriptin <code>confirm</code>-dialogi kysyy, onko käyttäjä
+
+        opiskelija.</p>
+
+    <ul>
+
+        <li>Jos käyttäjä painaa OK, kirjoita sivulle: <strong>"Tervetuloa opiskelija"</strong></li>
+
+        <li>Jos käyttäjä painaa Peruuta, kirjoita sivulle: <strong>"Valitettavasti tämä sivu on tarkoitettu vain
+
+                opiskelijoille"</strong></li>
+
+    </ul>
+
+
+
+    <p><strong>Bonus:</strong> kysy myös nimi prompt-ikkunalla ja tulosta: "Tervetuloa, Anna!"</p>
+
+
+
+    <h2>Harjoitus 5 - kuvien tulostaminen taulukosta</h2>
+
+
+
+    <p>Käytä <code>document.write</code>-komentoa tulostaaksesi kuvatagin määrittelemän kuvan selaimen sivulle.
+
+        Poimi näytettävä kuva JavaScript-taulukosta.</p>
+
+
+
+    <p>Tehtävässä voit käyttää kuvia seuraavanlaisesta taulukosta:</p>
+
+
+
+    <pre><code>const images = [
+
+  "http://farm4.staticflickr.com/3691/11268502654_f28f05966c_m.jpg",
+
+  "http://farm1.staticflickr.com/33/45336904_1aef569b30_n.jpg",
+
+  "http://farm6.staticflickr.com/5211/5384592886_80a512e2c9.jpg",
+
+];
+
+</code></pre>
+
+
+
+    <p><strong>VINKKI:</strong> Voit käyttää yksittäisiä kuvia taulukon indeksin avulla. Esimerkiksi
+
+        <code>images[0]</code> sisältää URL-osoitteen:<br>
+
+        <code>http://farm4.staticflickr.com/3691/11268502654_f28f05966c_m.jpg</code>
+
+    </p>
+
+
+
+    <p>Kun olet valmis, kirjoita JavaScript-funktio, joka näyttää satunnaisen kuvan seuraavasta kuvalistasta.
+
+    </p>
+
+
+
+    <p><strong>VINKKI:</strong> Voit generoida satunnaisen kokonaisluvun halutulta alueelta (esim. 0–4)
+
+        seuraavalla koodilla:</p>
+
+
+
+    <pre><code>// Arvotaan kokonaisluku 0–4
+
+Math.floor(Math.random() * 5);
+
+ 
+
+// Tai voit käyttää suoraan taulukon kokoa
+
+Math.floor(Math.random() * images.length);
+
+</code></pre>
+
+
+
+</body>
+
+
+
+</html>
