@@ -1,0 +1,282 @@
+@@ -0,0 +1,212 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+	<title>Työpaja 4</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<script>
+
+    function changeHeading(){
+    document.querySelector("h2").innerHTML="Muokattu otsikko!"
+}
+
+    function secondButton(){
+    const tyylit = document.getElementById("tehtava2");
+    tyylit.style.color = "pink";
+    tyylit.style.backgroundColor = "black";
+    tyylit.style.fontStyle = "helvetica";
+    tyylit.style.fontSize = "30px";
+     }
+    
+    function thirdButton(){
+    const vaihdateksti = document.getElementById("tehtava3");
+    vaihdateksti.innerHTML = '<strong><em> "moi moi moi"</strong></em>';
+    }
+
+    function valintaAlert() {
+    const valinta = document.getElementById("valinta").value;
+    alert("Valitsit: " + valinta); 
+    }
+
+    // ... muut funktiot ...
+
+function valintaAlert() {
+    const valinta = document.getElementById("valinta").value;
+    alert("Valitsit: " + valinta); 
+}
+
+function changeCarImage() {
+    const valinta = document.getElementById("mySelect").value;
+    const kuvaElementti = document.getElementById("carimage");
+}
+
+    if (valinta === 'BMW') {
+        kuvaElementti.src = 'https://www.bmw.fi/content/dam/bmw/common/all-models/m-series/m8-coupe/2022/navigation/bmw-8series-coupe-modellfinder.png';
+    } else if (valinta === 'Audi') {
+        kuvaElementti.src = '';
+    } else if (valinta === 'Mercedes') {
+        kuvaElementti.src = 'https://i.imgur.com/jQx0N5k.png';
+    } else if (valinta === 'Volvo') {
+        kuvaElementti.src = 'https://i.imgur.com/L1n7R4t.png';
+    }
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+<body>
+	<hr />
+	<h2>Tehtävä 1: Perus- DOM-muokkaus</h2>
+	<p>
+		&nbsp;Alla näet kolme painiketta. Muokkaa lähdekoodia ja lisää näille
+		painikkeille onClick-tapahtumat. Käytä kehittäjäkonsolia löytääksesi
+	</p>
+	<p>
+		<button onclick="changeHeading();">painike 1</button>
+
+		<button onclick="secondButton()">Painike 2</button>
+        
+		<button onclick="thirdButton()">Painike 3</button>
+
+	</p>
+
+	<ul>
+		<li>
+			Ensimmäisen painikkeen tulisi suorittaa JavaScript-funktio, joka löytää
+			viittauksen sivun &quot;Työpaja 4&quot; -otsikkoon ja muuttaa sen
+			sisällön muotoon &quot;Muokattu otsikko!&quot;.
+		</li>
+		<li>
+			Toisen painikkeen tulisi suorittaa funktio, joka muuttaa sivun
+			&quot;Tehtävä 2&quot; -otsikon tyyliä. JavaScriptin tulee muuttaa
+			vähintään fonttikokoa, tyyliä, väritystä sekä taustaväriä.
+		</li>
+		<li>
+			Kolmas painike lisää korvaa allaolevan Lorem Ipsum-tekstikappaleen sisällön jollain itse valitsemallasi
+			tekstillä. Säilytä tekstin muotoilu.<br />
+			<br />
+
+            <div id="tehtava3">
+			<strong id="lorem"><em>&quot;Lorem ipsum</em></strong><em>
+				dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum
+				sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed
+				sapien. Mauris varius diam vitae arcu. Sed arcu lectus auctor vitae,
+				consectetuer et venenatis eget velit. &quot;<br><br></em>
+            </div>
+
+		</li>
+		<li>
+			Bonus: Miten lisäisit tekstiä Lorem Ipsum-kappaleen perään ylikirjoittamatta olemassaolevaa tekstiä?
+		</li>
+		<li>Bonus: Miten vaihtaisit JavaScriptillä koko sivun taustaväriä?</li>
+	</ul>
+
+
+	<hr />
+	<h2 id="tehtava2">Tehtävä 2: Kuvat ja alasvetovalikot</h2>
+	<ul>
+		<li>
+			Kirjoita JavaScript-funktio, joka suoritetaan, kun alasvetovalikon valinta
+			muuttuu (onchange-kuuntelija). Näytä käyttäjän valinta alert-ikkunassa.
+		</li>
+
+		<li>
+			Kun saat edellisen kohdan toimimaan, muokkaa koodia siten että automallin valinta alasvetovalikosta vaihtaa
+			alla näkyvän kuvan toiseksi. Tutki sivun koodia ja mieti miten tämä toteutetaan. Etsi sopivat kuvat eri
+			autoille verkosta. Vinkki: kuvan id sivulla on "carimage".
+		</li>
+		<li>
+			Rakenna kuvaan kuuntelija, joka saa aikaan sen että kun hiiri siirtyy kuvan päälle, kuvan ympärille tulee
+			näkyä värillinen
+			reunus. Kun hiiri poistuu, reunus katoaa.
+		</li>
+	</ul>
+	<p>Valitse uusi auto listasta.</p>
+
+    <select name="mySelect" id="mySelect" onchange="changeCarImage()">
+    <option value="BMW">BMW</option>
+    <option value="Audi">Audi</option>
+    <option value="Mercedes">Mercedes</option>
+    <option value="Volvo">Volvo</option>
+</select>
+
+
+	<br />
+	<br />
+	<img alt="Auto" onmouseover="" onmouseout="" style="left: 0px; opacity: 1"
+		src="https://www.bmw.fi/content/dam/bmw/common/all-models/m-series/m8-coupe/2022/navigation/bmw-8series-coupe-modellfinder.png"
+		width="400" id="carimage" />
+
+
+	<hr />
+	<h2>Tehtävä 3: Taulukot</h2>
+	<ul>
+		<li>
+			Lue lomakkeen kentät ja tarkasta niiden sisällön oikeellisuus napin painalluksen (on click) jälkeen. Ilmoita
+			käyttäjälle esim. alert-ikkunalla jos tuli virheitä. <ul>
+				<li>Nimen tulee olla yli 5 merkkiä pitkä</li>
+				<li>Tehtävä kenttä ei saa olla tyhjä</li>
+				<li>Palkka kenttä pitää olla yli 0 ja sen tulee sisältää vain numeroita</li>
+			</ul>
+		</li>
+		<li class="surprise">
+			Kun validointi toimii, kirjoita JavaScript-funktio joka lisää syötetyt arvot uutena rivinä allaolevaan
+			taulukkoon. Voit katsoa tukea esim. <a
+				href="https://www.w3schools.com/jsref/met_table_insertrow.asp">täältä</a>.
+		</li>
+		<li>Bonus: miten poistaisit rivejä taulukosta?</li>
+	</ul>
+	<br />
+	<p>
+	<h3>Palkkalomake</h3>
+	Nimi
+	<label for="textfield">:</label>
+	<input type="text" name="textfield" id="nimi" />
+	<br />
+	Tehtävä:
+	<input type="text" name="textfield2" id="tehtava" />
+	<br />
+	Palkka:
+	<input type="text" name="textfield3" id="palkka" />
+	<br /><br>
+	<input type="button" name="Insert" id="Insert" value="Lisää" />
+	</p>
+	<table id="data" class="display" border="1">
+		<thead>
+			<tr>
+				<th>Nimi</th>
+				<th>Tehtävä</th>
+				<th>Palkka</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Tiger Nixon</td>
+				<td>System Architect</td>
+				<td>$320 800</td>
+			</tr>
+			<tr>
+				<td>Garrett Winters</td>
+				<td>Accountant</td>
+				<td>$170 750</td>
+			</tr>
+			<tr>
+				<td>Ashton Cox</td>
+				<td>Junior Technical Author</td>
+				<td>$86 000</td>
+			</tr>
+			<tr>
+				<td>Cedric Kelly</td>
+				<td>Senior Javascript Developer</td>
+				<td>$433 060</td>
+			</tr>
+			<tr>
+				<td>Airi Satou</td>
+				<td>Accountant</td>
+				<td>$162 700</td>
+			</tr>
+		</tbody>
+		<tfoot></tfoot>
+	</table>
+
+	<hr />
+
+	<h2>Bonus-tehtävä: Siirrä elementtejä</h2>
+	<ul>
+		<li>
+			<p class="surprise">
+				Voit tehdä siistejä asioita muokkaamalla CSS-sääntöjä JavaScriptin
+				kautta. Katso esimerkkejä luentodioista. Kokeile sitten näitä:
+			</p>
+			<ol>
+				<li>
+					<button onclick="changePosition()">Siirrä!</button> Valitse div,
+					jonka id on &quot;carimage&quot; ja siirrä se 200px vasemmalle ja
+					500px alaspäin.
+				</li>
+				<li>
+					<button onclick="setInterval(function(){doMove();},1000); ">
+						Animoi
+					</button>
+					Kirjoita funktio doMove(), joka liikuttaa kuvaa näytön poikki tai
+					vielä parempi: edestakaisin näytöllä. Interval on jo lisätty listan
+					kohteen onclick-tapahtumaan.
+				</li>
+				<li>
+					<button onclick="setInterval(function(){fadeOut();},250);">
+						Häivytä!
+					</button>
+					Kirjoita funktio fadeOut(), joka hitaasti pienentää kuvan
+					opacity-arvon 1.0:sta 0:aan, jolloin kuva häviää. Interval on jo
+					lisätty listan kohteen onclick-tapahtumaan.
+				</li>
+				<li>
+					<button onclick="remove()">Häviä!</button> Lopuksi kirjoita
+					JavaScript, joka poistaa kuvan sivulta.
+				</li>
+			</ol>
+		</li>
+	</ul>
+
+	<hr />
+	<h2>Bonustehtäviä innokkaille</h2>
+	<ul>
+		<li dir="ltr">
+			<p dir="ltr">
+				Kirjoita silmukka, joka käy läpi kaikki sivun LI-tagit ja korvaa ne
+				&lt;strong&gt;-tagilla merkityllä, punaisella tekstillä, joka sanoo
+				&quot;Korvattu&quot;.
+			</p>
+		</li>
+		<li dir="ltr">
+			Miten korvaisit sisällön vain niissä, joissa on sana
+			&lsquo;Select&rsquo;?
+		</li>
+	</ul>
+</body>
+
+</html>
