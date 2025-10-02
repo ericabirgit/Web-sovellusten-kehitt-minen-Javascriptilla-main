@@ -40,22 +40,90 @@ function valintaAlert() {
     alert("Valitsit: " + valinta); 
 }
 
+
 function changeCarImage() {
     const valinta = document.getElementById("mySelect").value;
     const kuvaElementti = document.getElementById("carimage");
-}
 
     if (valinta === 'BMW') {
-        kuvaElementti.src = 'https://www.bmw.fi/content/dam/bmw/common/all-models/m-series/m8-coupe/2022/navigation/bmw-8series-coupe-modellfinder.png';
+        kuvaElementti.src = 'pictures/BMW.png'; // Muokattu
     } else if (valinta === 'Audi') {
-        kuvaElementti.src = '';
+        kuvaElementti.src = 'pictures/AUDI1.png'; // Muokattu
     } else if (valinta === 'Mercedes') {
-        kuvaElementti.src = 'https://i.imgur.com/jQx0N5k.png';
+        kuvaElementti.src = 'pictures/MERSU1.jpg'; // Muokattu
     } else if (valinta === 'Volvo') {
-        kuvaElementti.src = '';
+        kuvaElementti.src = 'pictures/VOLVO1.webp'; // Muokattu
+    }
+}
+
+
+// --- Tehtävä 3: Validointi ja rivin lisäys ---
+
+/**
+ * Funktio lukee lomakekentät ('nimi', 'tehtava', 'palkka'), suorittaa validoinnin
+ * ja lisää uuden rivin taulukkoon (ID: 'data').
+ */
+function lisaaJaValidoi() {
+    // 1. Lue kenttien arvot käyttäen oikeita ID:itä HTML-koodistasi
+    const nimi = document.getElementById('nimi').value.trim();
+    const tehtava = document.getElementById('tehtava').value.trim();
+    const palkka = document.getElementById('palkka').value.trim();
+
+    let virheet = []; // Lista virheilmoituksille
+
+    // 2. Validoinnin tarkistukset
+    
+    // Tarkistus 1: Nimi yli 5 merkkiä pitkä
+    if (nimi.length <= 5) {
+        virheet.push("Nimen tulee olla yli 5 merkkiä pitkä.");
     }
 
+    // Tarkistus 2: Tehtävä ei saa olla tyhjä
+    if (tehtava === "") {
+        virheet.push("Tehtävä-kenttä ei saa olla tyhjä.");
+    }
 
+    // Tarkistus 3: Palkka yli 0 ja vain numeroita
+    const palkkaNumero = Number(palkka);
+    if (isNaN(palkkaNumero) || palkkaNumero <= 0) {
+        virheet.push("Palkka kentän pitää olla yli 0 ja sen tulee sisältää vain numeroita.");
+    }
+
+    // 3. Ilmoita virheet ja keskeytä, jos virheitä löytyi
+    if (virheet.length > 0) {
+        alert("Lomakkeen virheet:\n" + virheet.join("\n"));
+        return; // Pysäytä funktion suoritus
+    }
+
+    // --- Jos validointi OK, jatketaan ---
+
+    // 4. Taulukon käsittely (Rivin lisääminen)
+    
+    // Hae viittaus taulukon bodyyn (ID: data)
+    const taulukkoBody = document.getElementById('data').querySelector('tbody'); 
+
+    // Luo uusi rivi
+    const uusiRivi = taulukkoBody.insertRow(); 
+
+    // Lisää solut (<td>) uuteen riviin
+    
+    // Solu 1: Nimi
+    uusiRivi.insertCell(0).innerHTML = nimi;
+
+    // Solu 2: Tehtävä
+    uusiRivi.insertCell(1).innerHTML = tehtava;
+
+    // Solu 3: Palkka (muotoillaan)
+    // Lisätään dollarimerkki ja muotoilu, jotta se näyttää samalta kuin olemassa olevat rivit
+    uusiRivi.insertCell(2).innerHTML = `$${palkkaNumero.toLocaleString('fi-FI')}`;
+    
+    // 5. Tyhjennä kentät onnistuneen lisäyksen jälkeen
+    document.getElementById('nimi').value = '';
+    document.getElementById('tehtava').value = '';
+    document.getElementById('palkka').value = '';
+}
+
+// LISÄÄ TÄMÄ FUNKTIO OLEMASSA OLEVAAN SCRIPT-LOHKOOSI
 
 
 
@@ -183,7 +251,7 @@ function changeCarImage() {
 	Palkka:
 	<input type="text" name="textfield3" id="palkka" />
 	<br /><br>
-	<input type="button" name="Insert" id="Insert" value="Lisää" />
+	<input type="button" name="Insert" id="Insert" value="Lisää" onclick="lisaaJaValidoi()" />
 	</p>
 	<table id="data" class="display" border="1">
 		<thead>
